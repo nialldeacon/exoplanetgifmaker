@@ -26,7 +26,7 @@ print((event_time[0])[1])
 colours=['orange','green','blue','red','teal']
 months_str=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 centre_bins=[200,600,1000,1400]
-
+#load planet images
 earth=Image.open(indir+'/earth.png')
 earth.thumbnail((20,20), Image.ANTIALIAS)
 super_earth=Image.open(indir+'/super_earth.png')
@@ -39,6 +39,7 @@ jup.thumbnail((200,200), Image.ANTIALIAS)
 #initialist animated gif frames
 frames = []
 
+#arrange the data into arrays for usage
 table = parse_single_table(infile)
 data=table.array
 date1_bytes=data['pl_publ_date']
@@ -67,6 +68,7 @@ pl_disc_method=np.full(len(years2),-1,dtype=int)
 pl_type=np.full(len(years2),-1,dtype=int)
 pl_name=strs = ["" for x in range(len(years2))]
 disc_methods=['Astrometry','Disk Kinematics','Eclipse Timing Variations','Imaging','Microlensing','Orbital Brightness Modulation','Pulsar Timing','Pulsation Timing Variations','Radial Velocity','Transit','Transit Timing Variations']
+#loop over exoplanets sorting their type and discovery methods into numerical categories and parsing their discovery dates 
 for i in range(0,len(years2)):
     index=[j for j, s in enumerate(disc_methods) if disc_method_strings[i] == s]
     #print(pl_hostname_strings[i],pl_letter_strings[i],index)
@@ -106,7 +108,7 @@ for i in range(0,len(years2)):
         else:
             years[i]=float(years2[i])
             months[i]=float(months2[i]) 
-      
+#loop through each year and month (exiting at the current date) to make the image frames
 for i0 in range(1990,2021):
     for i1 in range(1,13):
         if(((i0==today.year)&(i1>today.month))|(i0>today.year)):
@@ -208,6 +210,5 @@ for i0 in range(1990,2021):
             frames.append(img)
         #print('overwriting planet_detect_grid_old',i0,i1,i1a,pl_detect_grid_old,pl_detect_grid)
        
-            
+#save the images to an animated GIF
 frames[0].save(image_filename, format='GIF', append_images=frames[1:], save_all=True, duration=50, loop=0)
-print(pl_mass)
