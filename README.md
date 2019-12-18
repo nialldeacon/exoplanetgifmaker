@@ -1,5 +1,6 @@
 # exoplanetgifmaker
 Makes a gif video of the number of exoplanets discovered over time by different methods
+Example of the output here https://twitter.com/nialldeacon/status/1207270762945667072
 
 This code requires PIL, astropy and numpy.
 
