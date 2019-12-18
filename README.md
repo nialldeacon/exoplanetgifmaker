@@ -12,7 +12,7 @@ super earth artist's impression of Kepler 62e NASA Ames/JPL-Caltech/T. Pyle
 neptune voyager 2 NASA/JPL
 jupiter NASA, ESA, A. Simon (Goddard Space Flight Center) and M.H. Wong (University of California, Berkeley)
 
-I used the HindVadodara-Bold font, you can download this font or change it to something you prefer by editing the font_loc string 
+I used the HindVadodara-Bold font, you can download this font or change it to something you prefer by editing the font_loc string. If you do change the font you will need to move the positions of the 'E' subscripts by hand
 
 I converted from the animated GIF to MPEG using
 ffmpeg -i test.gif -r 20 -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.mp4
