@@ -84,6 +84,7 @@ for i in range(0,len(years2)):
            pl_type[i]=3
     else:
         if(pl_mass[i]>0.0):
+            #here I'm doing cuts on planets with no radius estimate using the mass estimate
             if((pl_mass[i]>0.0)&(pl_mass[i]<2.0)):
                 pl_type[i]=0
             if((pl_mass[i]>2.0)&(pl_mass[i]<6.0)):
