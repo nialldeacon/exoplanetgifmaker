@@ -6,6 +6,8 @@ This code requires PIL, astropy and numpy.
 
 You can generate an input file from https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=planets note you need to add the pl_publ_date attribute and downloads as a VOTable
 
+Planets are classified by radius and where that is not available by some rough cuts on mass, feel free to change those
+
 The cutout images for the planets are in the image subfolder of this repository, please add the following credits to any mention of them on social media etc.
 earth NASA EPIC/DISCOVR
 super earth artist's impression of Kepler 62e NASA Ames/JPL-Caltech/T. Pyle
