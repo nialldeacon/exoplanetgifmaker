@@ -3,8 +3,7 @@ Makes a gif video of the number of exoplanets discovered over time by different 
 Example of the output here https://twitter.com/nialldeacon/status/1207270762945667072
 
 This code requires PIL, astropy and numpy.
-
-You can generate an input file from https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=planets note you need to add the pl_publ_date attribute and downloads as a VOTable
+You can generate an input file from https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PS note you need to add the pl_publ_date attribute, filter so that "Default Parameter Set"==1 and download as a VOTable.
 
 Planets are classified by radius and where that is not available by some rough cuts on mass, feel free to change those
 
